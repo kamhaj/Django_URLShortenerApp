@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card text-center">
+    <div class="card-body">
+        <h1>Welcome To URL Shortener</h1>
+        <p>This is an app to make your life easier</p>
+        <a class="btn btn-dark" href="{% url 'shorten_url_app:show_form' %}">Shorten URL</a>
+        <a class="btn btn-dark" href="{% url 'admin:index' %}">Visit Admin Area</a>
+    </div>
+</div>
+{% endblock %}

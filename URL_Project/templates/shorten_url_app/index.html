@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center mb-3">URL list</h1>
+<!-- check if context variable even exist -->
+{% if urls_list %}
+    {% for single_url in urls_list %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <p class="lead">Full URL: {{ single_url.url_text }}</p>
+                <p class="lead">Add date: {{ single_url.pub_date }}</p>
+                <p class="lead">Shortened URL: {{ single_url.short_url_text }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p> No URLs available</p>
+{% endif %}
+{% endblock %}

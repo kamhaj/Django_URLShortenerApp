@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8" />
+</head>
+<h2 class="text-center mb-3">Please enter your URL:</h2>
+<div class="card text-center">
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <p><button type="submit" class="btn btn-primary btn-sm mb-3">Shorten</button></p>
+        </form>
+    </div>
+</div>
+{% if encoded_url %}
+    <p>Your short URL: <a href="{{ user_url }}">{{ encoded_url }}</a></p>
+{% endif %}
+{% endblock %}
